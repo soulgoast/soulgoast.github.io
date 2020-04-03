@@ -151,6 +151,109 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hexo-theme-cutie.qutang.dev/2020/04/03/windows%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="soul_goodman">
+      <meta itemprop="description" content="java从业人员，网站架构，多线程并发">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Soul Goodman Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/04/03/windows%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/" class="post-title-link" itemprop="url">端口被占用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020年4月3日 08:52:06 / 修改时间：08:58:39" itemprop="dateCreated datePublished" datetime="2020-04-03T08:52:06+08:00">2020年4月3日</time>
+            </span>
+
+          
+            <span id="/2020/04/03/windows%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/" class="post-meta-item leancloud_visitors" data-flag-title="端口被占用" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度：</span>
+              <span class="leancloud-visitors-count"></span>
+			  <span>°C</span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/04/03/windows%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/03/windows%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>282</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="1、Windows平台">1、Windows平台</h3>
+<p>在windows命令行窗口下执行：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\&gt;<span class="title">netstat</span> -<span class="title">aon</span>|<span class="title">findstr</span> "80"</span></span><br><span class="line"><span class="function"><span class="title">TCP</span>    127.0.0.1:80        0.0.0.0:0              <span class="title">LISTENING</span>      2448</span></span><br></pre></td></tr></table></figure>
+<p>看到了吗，端口被进程号为2448的进程占用，继续执行下面命令：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\&gt;<span class="title">tasklist</span>|<span class="title">findstr</span> "2448"</span></span><br><span class="line"><span class="function"><span class="title">thread.exe</span>                    2016 <span class="title">Console</span>                0    16,064 <span class="title">K</span></span></span><br></pre></td></tr></table></figure>
+<p>很清楚吧，thread占用了你的端口,Kill it
+如果第二步查不到，那就开任务管理器，看哪个进程是2448，然后杀之即可。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">taskkill</span> /im nginx.exe /f</span><br></pre></td></tr></table></figure>
+<h3 id="2、Centos平台">2、Centos平台</h3>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://hexo-theme-cutie.qutang.dev/2020/04/01/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -273,7 +376,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/01/Test/" class="post-title-link" itemprop="url">Test</a>
+            <a href="/2020/04/01/Test/" class="post-title-link" itemprop="url">ArrayList源码学习</a>
         </h2>
 
         <div class="post-meta">
@@ -282,13 +385,19 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020年4月1日 17:09:46 / 修改时间：17:10:31" itemprop="dateCreated datePublished" datetime="2020-04-01T17:09:46+08:00">2020年4月1日</time>
+              <time title="创建时间：2020年4月1日 17:09:46" itemprop="dateCreated datePublished" datetime="2020-04-01T17:09:46+08:00">2020年4月1日</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020年4月3日 08:07:04" itemprop="dateModified" datetime="2020-04-03T08:07:04+08:00">2020年4月3日</time>
+              </span>
 
           
-            <span id="/2020/04/01/Test/" class="post-meta-item leancloud_visitors" data-flag-title="Test" title="热度">
+            <span id="/2020/04/01/Test/" class="post-meta-item leancloud_visitors" data-flag-title="ArrayList源码学习" title="热度">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -315,7 +424,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>12</span>
+              <span>704</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -334,8 +443,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="测试">测试</h2>
-<p>这是为我的测试文件。</p>
+          <p><code>ArrayList</code>是<code>java collection framework</code>的组成部分。<code>jdk</code>源码中对<code>ArrayList</code>的介绍：</p>
+<blockquote>
+<p>List 接口的可调整大小的数组实现。实现<em>所有可选的列表操作，并允许所有元素，包括</em> <tt> null &lt;/ tt&gt;。除了实现<tt> List &lt;/ tt&gt;接口之外，<em>此类还提供了一些方法来操纵内部用于存储列表的数组的大小。 （此类与</em> <tt> Vector &lt;/ tt&gt;大致等效，但它是不同步的。）</p>
+</blockquote>
+<p>数据的介绍、增删改查的方法及特点</p>
+<p>再来看看<code>ArrayList</code>继承的类和接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractList</span>&lt;<span class="title">E</span>&gt; <span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br></pre></td></tr></table></figure>
+<p>序列化接口<code>Serializable</code></p>
+<p>在<code>java</code>中序列化指的是把<code>java</code>对象转为可以在网络上传输的格式，或者可持久化的格式的过程。反序列化指的是将网络上或持久化的数据转换为<code>java</code>对象的过程。<code>JDK</code>自带序列化和反序列化的功能，使用起来也很方便，让需要序列化的类实现<code>Serializable</code>接口即可。<code>jdk</code>源码中对<code>Serializable</code>的介绍：</p>
+<blockquote>
+<p>通过实现<code>java.io.Serializable</code>接口，可以启动类的可序列化功能。</p>
+</blockquote>
+<blockquote>
+<p>案例：通过序列化和反序列化集合</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一些序列化工具和框架介绍。</p>
+<p>字符串拼接性能优化</p>
+<p>克隆接口</p>
+<p>浅拷贝和深拷贝</p>
+<p>随机访问接口</p>
+<p>顺序访问接口</p>
+<p>性能比较</p>
+<p><code>AbstractList</code>抽象类</p>
+<p>骨架</p>
 
       
     </div>
@@ -417,12 +549,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -459,7 +591,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">0k</span>
+    <span title="站点总字数">1k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
